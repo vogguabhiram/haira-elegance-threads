@@ -23,7 +23,14 @@ interface StoreValue {
   shipping: number;
   total: number;
   wishlist: string[];
-  addToCart: (productId: string, opts?: { quantity?: number; size?: string; color?: string }) => void;
+  addToCart: (
+    productId: string,
+    opts?: {
+      quantity?: number | undefined;
+      size?: string | undefined;
+      color?: string | undefined;
+    },
+  ) => void;
   setQuantity: (key: string, quantity: number) => void;
   removeLine: (key: string) => void;
   clearCart: () => void;
