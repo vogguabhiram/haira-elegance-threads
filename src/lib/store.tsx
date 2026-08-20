@@ -5,8 +5,8 @@ import { getProductById, type Product } from "@/data/products";
 export interface CartLine {
   productId: string;
   quantity: number;
-  size?: string;
-  color?: string;
+  size?: string | undefined;
+  color?: string | undefined;
 }
 
 export interface CartEntry extends CartLine {
