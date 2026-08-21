@@ -10,33 +10,115 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DressesRouteImport } from './routes/dresses'
+import { Route as EthnicWearRouteImport } from './routes/ethnic-wear'
+import { Route as KurtisRouteImport } from './routes/kurtis'
+import { Route as NewArrivalsRouteImport } from './routes/new-arrivals'
+import { Route as SareesRouteImport } from './routes/sarees'
+import { Route as ShopRouteImport } from './routes/shop'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DressesRoute = DressesRouteImport.update({
+  id: '/dresses',
+  path: '/dresses',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EthnicWearRoute = EthnicWearRouteImport.update({
+  id: '/ethnic-wear',
+  path: '/ethnic-wear',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KurtisRoute = KurtisRouteImport.update({
+  id: '/kurtis',
+  path: '/kurtis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewArrivalsRoute = NewArrivalsRouteImport.update({
+  id: '/new-arrivals',
+  path: '/new-arrivals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SareesRoute = SareesRouteImport.update({
+  id: '/sarees',
+  path: '/sarees',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopRoute = ShopRouteImport.update({
+  id: '/shop',
+  path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/dresses': typeof DressesRoute
+  '/ethnic-wear': typeof EthnicWearRoute
+  '/kurtis': typeof KurtisRoute
+  '/new-arrivals': typeof NewArrivalsRoute
+  '/sarees': typeof SareesRoute
+  '/shop': typeof ShopRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/dresses': typeof DressesRoute
+  '/ethnic-wear': typeof EthnicWearRoute
+  '/kurtis': typeof KurtisRoute
+  '/new-arrivals': typeof NewArrivalsRoute
+  '/sarees': typeof SareesRoute
+  '/shop': typeof ShopRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/dresses': typeof DressesRoute
+  '/ethnic-wear': typeof EthnicWearRoute
+  '/kurtis': typeof KurtisRoute
+  '/new-arrivals': typeof NewArrivalsRoute
+  '/sarees': typeof SareesRoute
+  '/shop': typeof ShopRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/dresses'
+    | '/ethnic-wear'
+    | '/kurtis'
+    | '/new-arrivals'
+    | '/sarees'
+    | '/shop'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/dresses'
+    | '/ethnic-wear'
+    | '/kurtis'
+    | '/new-arrivals'
+    | '/sarees'
+    | '/shop'
+  id:
+    | '__root__'
+    | '/'
+    | '/dresses'
+    | '/ethnic-wear'
+    | '/kurtis'
+    | '/new-arrivals'
+    | '/sarees'
+    | '/shop'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DressesRoute: typeof DressesRoute
+  EthnicWearRoute: typeof EthnicWearRoute
+  KurtisRoute: typeof KurtisRoute
+  NewArrivalsRoute: typeof NewArrivalsRoute
+  SareesRoute: typeof SareesRoute
+  ShopRoute: typeof ShopRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +130,59 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/dresses': {
+      id: '/dresses'
+      path: '/dresses'
+      fullPath: '/dresses'
+      preLoaderRoute: typeof DressesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ethnic-wear': {
+      id: '/ethnic-wear'
+      path: '/ethnic-wear'
+      fullPath: '/ethnic-wear'
+      preLoaderRoute: typeof EthnicWearRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kurtis': {
+      id: '/kurtis'
+      path: '/kurtis'
+      fullPath: '/kurtis'
+      preLoaderRoute: typeof KurtisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/new-arrivals': {
+      id: '/new-arrivals'
+      path: '/new-arrivals'
+      fullPath: '/new-arrivals'
+      preLoaderRoute: typeof NewArrivalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sarees': {
+      id: '/sarees'
+      path: '/sarees'
+      fullPath: '/sarees'
+      preLoaderRoute: typeof SareesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shop': {
+      id: '/shop'
+      path: '/shop'
+      fullPath: '/shop'
+      preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DressesRoute: DressesRoute,
+  EthnicWearRoute: EthnicWearRoute,
+  KurtisRoute: KurtisRoute,
+  NewArrivalsRoute: NewArrivalsRoute,
+  SareesRoute: SareesRoute,
+  ShopRoute: ShopRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

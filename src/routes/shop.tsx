@@ -4,9 +4,9 @@ import { PageHeader } from "@/components/haira/PageHeader";
 import { products } from "@/data/products";
 
 export const Route = createFileRoute("/shop")({
-  validateSearch: (search: Record<string, unknown>) => ({
-    q: typeof search["q"] === "string" ? (search["q"] as string) : undefined,
-  }),
+  validateSearch: (search: Record<string, unknown>): { q?: string } =>
+    typeof search["q"] === "string" && search["q"] ? { q: search["q"] as string } : {},
+
   head: () => ({
     meta: [
       { title: "Shop All | HAIRA Collections" },
