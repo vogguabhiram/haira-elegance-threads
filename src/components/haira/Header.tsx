@@ -44,7 +44,7 @@ export function Header() {
     e.preventDefault();
     setSearchOpen(false);
     setMenuOpen(false);
-    navigate({ to: "/shop", search: { q: query || undefined } });
+    navigate({ to: "/shop", search: query ? { q: query } : {} });
   };
 
   return (
