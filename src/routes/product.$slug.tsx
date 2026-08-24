@@ -232,6 +232,7 @@ function ProductPage() {
                 <span className="ml-3 text-xs text-muted-foreground">
                   {product.stock} in stock · SKU {product.sku}
                 </span>
+                <StockMeter stock={product.stock} className="mt-3 max-w-xs" />
               </div>
             </div>
 
