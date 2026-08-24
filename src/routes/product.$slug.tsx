@@ -5,6 +5,8 @@ import { toast } from "sonner";
 import { ProductCard } from "@/components/haira/ProductCard";
 import { SectionHeading } from "@/components/haira/SectionHeading";
 import { StarRating } from "@/components/haira/StarRating";
+import { StockMeter } from "@/components/haira/StockMeter";
+import { TrustBadges } from "@/components/haira/TrustBadges";
 import { Button } from "@/components/ui/button";
 import { discountPercent, formatINR, getProductBySlug, products } from "@/data/products";
 import { BRAND, waMessages, whatsappLink } from "@/lib/brand";
