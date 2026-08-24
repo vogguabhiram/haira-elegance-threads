@@ -103,9 +103,11 @@ export function ProductCard({
               </span>
             )}
           </div>
+          <StockMeter stock={product.stock} className="mt-2" />
           <Button
             size="sm"
             className="mt-2 w-full rounded-full ring-1 ring-transparent transition-all duration-300 hover:ring-gold/60"
+            disabled={product.stock <= 0}
             onClick={() => {
               addToCart(product.id, {
                 size: product.sizes[0],
@@ -115,6 +117,20 @@ export function ProductCard({
             }}
           >
             <ShoppingBag className="h-4 w-4" /> Add to Cart
+          </Button>
+          <Button
+            asChild
+            size="sm"
+            variant="outline"
+            className="mt-2 w-full rounded-full border-gold/50 text-primary hover:bg-gold/10"
+          >
+            <a
+              href={whatsappLink(waMessages.order(product.name))}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <MessageCircle className="h-4 w-4" /> Order on WhatsApp
+            </a>
           </Button>
         </div>
       </div>
