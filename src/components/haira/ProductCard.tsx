@@ -103,7 +103,7 @@ export function ProductCard({
           </div>
           <Button
             size="sm"
-            className="mt-2 w-full rounded-full ring-1 ring-transparent transition-all duration-300 hover:ring-gold/40"
+            className="mt-2 w-full rounded-full ring-1 ring-transparent transition-all duration-300 hover:ring-gold/60"
             onClick={() => {
               addToCart(product.id, {
                 size: product.sizes[0],
