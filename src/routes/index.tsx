@@ -106,6 +106,13 @@ function Home() {
         </div>
       </section>
 
+      {/* TRUST STRIP */}
+      <section className="container-haira pt-10 md:pt-14">
+        <Reveal>
+          <TrustBadges />
+        </Reveal>
+      </section>
+
       {/* CATEGORIES */}
       <section className="container-haira py-16 md:py-24">
         <SectionHeading
