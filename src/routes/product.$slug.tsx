@@ -288,8 +288,10 @@ function ProductPage() {
             </div>
 
             <p className="mt-6 inline-flex items-center gap-2 text-xs text-muted-foreground">
-              <Truck className="h-4 w-4" /> {BRAND.shipping} · Free delivery on orders above ₹2,999
+              <Truck className="h-4 w-4" /> {BRAND.shipping} · Free delivery on orders above ₹999
             </p>
+
+            <TrustBadges compact className="mt-6" />
           </div>
         </div>
       </div>
