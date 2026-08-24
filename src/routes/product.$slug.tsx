@@ -275,7 +275,8 @@ function ProductPage() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full bg-[#25D366] text-white hover:bg-[#1eb355]"
+                className="rounded-full border-gold/60 text-primary hover:bg-gold/10"
+                variant="outline"
               >
                 <a
                   href={whatsappLink(waMessages.order(product.name))}
