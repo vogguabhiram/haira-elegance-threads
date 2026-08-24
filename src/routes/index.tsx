@@ -74,14 +74,19 @@ function Home() {
           style={{ background: "var(--gradient-hero)" }}
           aria-hidden="true"
         />
+        {/* Soft bottom blend into the cream page — removes the hard cut */}
+        <div
+          className="absolute inset-x-0 bottom-0 z-[1] h-32 bg-linear-to-t from-background to-transparent"
+          aria-hidden="true"
+        />
         <div className="container-haira relative flex min-h-[78dvh] items-center py-20 md:min-h-[86dvh]">
-          <div className="max-w-xl text-primary-foreground">
-            <p className="eyebrow text-primary-foreground/80">{BRAND.shipping}</p>
+          <div className="max-w-xl text-primary-foreground [text-shadow:0_2px_18px_oklch(0.2_0.04_40/0.45)]">
+            <p className="eyebrow text-gold">{BRAND.shipping}</p>
             <h1 className="mt-4 text-4xl leading-[1.08] sm:text-5xl md:text-6xl">
               Elegance in Every Thread
             </h1>
             <div className="gold-rule mt-5" />
-            <p className="mt-5 max-w-md text-base leading-relaxed text-primary-foreground/85 md:text-lg">
+            <p className="mt-5 max-w-md text-base leading-relaxed text-primary-foreground/90 md:text-lg">
               Discover timeless ethnic wear designed to make every occasion special.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -92,7 +97,7 @@ function Home() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="rounded-full border-primary-foreground/50 bg-transparent px-8 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+                className="rounded-full border-primary-foreground/40 bg-primary-foreground/5 px-8 text-primary-foreground backdrop-blur-sm hover:bg-primary-foreground/10 hover:text-primary-foreground"
               >
                 <Link to="/sarees">Explore Sarees</Link>
               </Button>
