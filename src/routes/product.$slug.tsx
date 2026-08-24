@@ -5,6 +5,8 @@ import { toast } from "sonner";
 import { ProductCard } from "@/components/haira/ProductCard";
 import { SectionHeading } from "@/components/haira/SectionHeading";
 import { StarRating } from "@/components/haira/StarRating";
+import { StockMeter } from "@/components/haira/StockMeter";
+import { TrustBadges } from "@/components/haira/TrustBadges";
 import { Button } from "@/components/ui/button";
 import { discountPercent, formatINR, getProductBySlug, products } from "@/data/products";
 import { BRAND, waMessages, whatsappLink } from "@/lib/brand";
@@ -232,6 +234,7 @@ function ProductPage() {
                 <span className="ml-3 text-xs text-muted-foreground">
                   {product.stock} in stock · SKU {product.sku}
                 </span>
+                <StockMeter stock={product.stock} className="mt-3 max-w-xs" />
               </div>
             </div>
 
@@ -272,7 +275,8 @@ function ProductPage() {
               <Button
                 asChild
                 size="lg"
-                className="rounded-full bg-[#25D366] text-white hover:bg-[#1eb355]"
+                className="rounded-full border-gold/60 text-primary hover:bg-gold/10"
+                variant="outline"
               >
                 <a
                   href={whatsappLink(waMessages.order(product.name))}
@@ -285,8 +289,10 @@ function ProductPage() {
             </div>
 
             <p className="mt-6 inline-flex items-center gap-2 text-xs text-muted-foreground">
-              <Truck className="h-4 w-4" /> {BRAND.shipping} · Free delivery on orders above ₹2,999
+              <Truck className="h-4 w-4" /> {BRAND.shipping} · Free delivery on orders above ₹999
             </p>
+
+            <TrustBadges compact className="mt-6" />
           </div>
         </div>
       </div>

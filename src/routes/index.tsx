@@ -9,6 +9,7 @@ import { QuickViewDialog } from "@/components/haira/QuickViewDialog";
 import { Reveal } from "@/components/haira/Reveal";
 import { SectionHeading } from "@/components/haira/SectionHeading";
 import { StarRating } from "@/components/haira/StarRating";
+import { TrustBadges } from "@/components/haira/TrustBadges";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { categories, products, type Product } from "@/data/products";
@@ -104,6 +105,13 @@ function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* TRUST STRIP */}
+      <section className="container-haira pt-10 md:pt-14">
+        <Reveal>
+          <TrustBadges />
+        </Reveal>
       </section>
 
       {/* CATEGORIES */}
