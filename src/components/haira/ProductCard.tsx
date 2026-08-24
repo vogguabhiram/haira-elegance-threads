@@ -21,7 +21,7 @@ export function ProductCard({
   const wished = isWishlisted(product.id);
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-card shadow-[var(--shadow-soft)] ring-1 ring-transparent transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-lift)] hover:ring-gold/20">
       <div className="relative overflow-hidden bg-secondary">
         <Link
           to="/product/$slug"
