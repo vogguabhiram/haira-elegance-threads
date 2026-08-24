@@ -21,7 +21,7 @@ export function ProductCard({
   const wished = isWishlisted(product.id);
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-card shadow-[var(--shadow-soft)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border/70 bg-card shadow-[var(--shadow-soft)] ring-1 ring-transparent transition-all duration-500 hover:-translate-y-1 hover:border-gold/70 hover:shadow-[var(--shadow-lift)] hover:ring-gold/40">
       <div className="relative overflow-hidden bg-secondary">
         <Link
           to="/product/$slug"
@@ -90,29 +90,31 @@ export function ProductCard({
           </Link>
         </h3>
         {!compact && <StarRating rating={product.rating} count={product.reviewCount} />}
-        <div className="mt-auto flex flex-wrap items-baseline gap-x-2 gap-y-1 pt-1">
-          <span className="text-base font-medium text-primary sm:text-lg">
-            {formatINR(product.price)}
-          </span>
-          {product.mrp > product.price && (
-            <span className="text-xs text-muted-foreground line-through">
-              {formatINR(product.mrp)}
+        <div className="mt-auto pt-1">
+          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+            <span className="text-base font-medium text-primary sm:text-lg">
+              {formatINR(product.price)}
             </span>
-          )}
+            {product.mrp > product.price && (
+              <span className="text-xs text-muted-foreground line-through">
+                {formatINR(product.mrp)}
+              </span>
+            )}
+          </div>
+          <Button
+            size="sm"
+            className="mt-2 w-full rounded-full ring-1 ring-transparent transition-all duration-300 hover:ring-gold/60"
+            onClick={() => {
+              addToCart(product.id, {
+                size: product.sizes[0],
+                color: product.colors[0],
+              });
+              toast.success("Added to bag", { description: product.name });
+            }}
+          >
+            <ShoppingBag className="h-4 w-4" /> Add to Cart
+          </Button>
         </div>
-        <Button
-          size="sm"
-          className="mt-2 w-full rounded-full"
-          onClick={() => {
-            addToCart(product.id, {
-              size: product.sizes[0],
-              color: product.colors[0],
-            });
-            toast.success("Added to bag", { description: product.name });
-          }}
-        >
-          <ShoppingBag className="h-4 w-4" /> Add to Cart
-        </Button>
       </div>
     </article>
   );
