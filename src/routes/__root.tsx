@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header } from "@/components/haira/Header";
+import { OfferBanner } from "@/components/haira/OfferBanner";
 import { Footer } from "@/components/haira/Footer";
 import { WhatsAppButton } from "@/components/haira/WhatsAppButton";
 import { StoreProvider } from "@/lib/store";
