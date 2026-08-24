@@ -1,9 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import { Eye, Heart, ShoppingBag } from "lucide-react";
+import { Eye, Heart, MessageCircle, ShoppingBag } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { StarRating } from "./StarRating";
+import { StockMeter } from "./StockMeter";
 import { discountPercent, formatINR, type Product } from "@/data/products";
+import { whatsappLink, waMessages } from "@/lib/brand";
 import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
