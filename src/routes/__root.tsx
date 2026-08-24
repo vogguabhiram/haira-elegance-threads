@@ -152,6 +152,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <StoreProvider>
         <div className="flex min-h-screen flex-col">
+          <OfferBanner />
           <Header />
           <main className="flex-1">
             {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
