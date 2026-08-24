@@ -15,10 +15,14 @@ export function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Order via WhatsApp"
-      className="fixed bottom-5 right-4 z-50 inline-flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-3 text-sm font-medium text-white shadow-[var(--shadow-lift)] transition-transform duration-300 hover:scale-105 sm:bottom-7 sm:right-7"
+      className="group fixed bottom-5 right-4 z-50 flex items-center gap-3 sm:bottom-7 sm:right-7"
     >
-      <MessageCircle className="h-5 w-5" />
-      <span className="hidden sm:inline">Order on WhatsApp</span>
+      <span className="hidden max-w-0 overflow-hidden whitespace-nowrap rounded-full bg-primary px-4 py-2.5 text-[11px] font-medium uppercase tracking-[0.2em] text-primary-foreground opacity-0 shadow-[var(--shadow-lift)] ring-1 ring-gold/30 transition-all duration-500 ease-out group-hover:max-w-[14rem] group-hover:opacity-100 sm:inline">
+        Order on WhatsApp
+      </span>
+      <span className="grid h-12 w-12 place-items-center rounded-full bg-primary text-gold shadow-[var(--shadow-lift)] ring-1 ring-gold/50 transition-transform duration-300 group-hover:scale-105 active:scale-95">
+        <MessageCircle className="h-5 w-5" />
+      </span>
     </a>
   );
 }
